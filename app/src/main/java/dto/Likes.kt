@@ -1,6 +1,6 @@
 package dto
 
-class Likes(val count: Int,
-            val userLikes: Boolean,
+class Likes(var count: Int,
+            var userLikes: Boolean,
             val canPublish: Boolean) {
 }

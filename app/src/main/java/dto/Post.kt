@@ -6,5 +6,6 @@ class Post(val id: Long,
            val created: String, // пока строка
            val comments: Comments,
            val likes: Likes,
-           val reposts: Reposts
+           val reposts: Reposts,
+           val geo: Geo
 )
