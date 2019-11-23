@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         )
         val reposts = Reposts(1, true)
         val geo = Geo(1, -90.9, 90.0, "SPb VO 7 64")
-        val post = Post(
+        val post = EventPost(
             1,
             "Netology",
             "First post in our network!",
@@ -31,8 +31,10 @@ class MainActivity : AppCompatActivity() {
             comments,
             likes,
             reposts,
+            "SPb",
             geo
             )
+
         currentDateText.text = post.created
         textView.text = post.content
         author.text = post.author
@@ -76,15 +78,19 @@ class MainActivity : AppCompatActivity() {
                     R.drawable.ic_favorite_inactive_24dp
                 })
 
-            if (post.likes.userLikes) post.likes.count++
+            if (post.likes.userLikes)
+            {
+                post.likes.count++
+            }
             else {
                 post.likes.count--
                 likesCount.setTextColor(defaultTextColor)
             }
 
             println("likes count: ${post.likes.count}")
-            if (post.likes.count > 0)
+            if (post.likes.count > 0){
                 likesCount.text = post.likes.count.toString()
+            }
             else {
                 likesCount.text = ""
             }
