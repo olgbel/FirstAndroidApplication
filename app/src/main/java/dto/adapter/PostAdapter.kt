@@ -14,7 +14,7 @@ import com.example.firstandroidapplication.R
 import android.net.Uri
 import dto.*
 
-class PostAdapter(val posts: List<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     override fun getItemCount() = posts.size
 
@@ -25,10 +25,10 @@ class PostAdapter(val posts: List<Post>) : RecyclerView.Adapter<PostAdapter.Post
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-        holder.bind(posts[position]);
+        holder.bind(posts[position])
     }
 
-    class PostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class PostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val userImageView: ImageView = view.findViewById(R.id.avatarImgView)
         private val created: TextView = view.findViewById(R.id.currentDateText)
@@ -45,8 +45,10 @@ class PostAdapter(val posts: List<Post>) : RecyclerView.Adapter<PostAdapter.Post
         private val playVideoButton: ImageButton = view.findViewById(R.id.playVideoButton)
         private val locationButton: ImageButton = view.findViewById(R.id.locationBtn)
         private val advertisingButton: ImageButton = view.findViewById(R.id.advertisingLinkButton)
+        private val deleteButton: ImageButton = view.findViewById(R.id.deleteButton)
 
         fun bind(post: Post) {
+
             created.text = howLongAgo(post.created)
             author.text = post.author
             content.text = post.content
@@ -62,6 +64,7 @@ class PostAdapter(val posts: List<Post>) : RecyclerView.Adapter<PostAdapter.Post
 
                 if (post !is AdvertisingPost){
                     advertisingButton.visibility = View.INVISIBLE
+                    deleteButton.visibility = View.INVISIBLE
                 }
 
                 if (likes.count > 0) {
@@ -140,6 +143,12 @@ class PostAdapter(val posts: List<Post>) : RecyclerView.Adapter<PostAdapter.Post
                     val webpage: Uri = Uri.parse((post as AdvertisingPost).url)
                     val intent = Intent(Intent.ACTION_VIEW, webpage)
                     startActivity(itemView.context, intent, null)
+                }
+
+                deleteButton.setOnClickListener {
+                    posts.drop(layoutPosition)
+                    notifyItemRemoved(layoutPosition)
+                    notifyDataSetChanged()
                 }
             }
         }
