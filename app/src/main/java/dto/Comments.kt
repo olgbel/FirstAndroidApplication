@@ -1,8 +1,8 @@
 package dto
 
-class Comments(val count: Int,
-               val canPost: Boolean,
-               val groupsCanPost: Boolean,
-               val canClose: Boolean,
-               val canOpen: Boolean) {
+class Comments(val count: Int = 0,
+               val canPost: Boolean = true,
+               val groupsCanPost: Boolean = true,
+               val canClose: Boolean = true,
+               val canOpen: Boolean = true) {
 }

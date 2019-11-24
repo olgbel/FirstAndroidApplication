@@ -1,10 +1,11 @@
 package dto
 
 open class Post(val id: Long,
-           val author: String,
-           val content: String,
-           val created: String,
-           val comments: Comments,
-           val likes: Likes,
-           val reposts: Reposts
+//                val type: PostType,
+                val author: String,
+                var content: String,
+                val created: Int,
+                val comments: Comments = Comments(),
+                val likes: Likes = Likes(),
+                val reposts: Reposts = Reposts()
 )

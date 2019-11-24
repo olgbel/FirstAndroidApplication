@@ -1,5 +1,5 @@
 package dto
 
-class Reposts(val count: Int,
-              val userReposted: Boolean) {
+class Reposts(val count: Int = 0,
+              val userReposted: Boolean = true) {
 }
