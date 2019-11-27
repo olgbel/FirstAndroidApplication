@@ -2,11 +2,9 @@ package com.example.firstandroidapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstandroidapplication.dto.*
-import dto.*
 import com.example.firstandroidapplication.dto.adapter.PostAdapter
 
 
@@ -45,6 +43,16 @@ class MainActivity : AppCompatActivity() {
                 Likes(3, false),
                 Reposts(1),
                 "https://www.youtube.com/watch?v=WhWc3b3KhnY"
+            ),
+            AdvertisingPost(
+                9,
+                "Netology",
+                "Test advertising delete",
+                9090,
+                Comments(9),
+                Likes(0, false),
+                Reposts(2),
+                "https://google.com/"
             ),
             Post(
                 6,

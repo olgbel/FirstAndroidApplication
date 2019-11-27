@@ -54,18 +54,10 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
             content.text = post.content
 
             with(post) {
-                if (post !is EventPost) {
-                    locationButton.visibility = View.INVISIBLE
-                }
-
-                if (post !is MediaPost) {
-                    playVideoButton.visibility = View.INVISIBLE
-                }
-
-                if (post !is AdvertisingPost){
-                    advertisingButton.visibility = View.INVISIBLE
-                    deleteButton.visibility = View.INVISIBLE
-                }
+                locationButton.visibility = if (post is EventPost) View.VISIBLE else View.INVISIBLE
+                playVideoButton.visibility = if (post is MediaPost) View.VISIBLE else View.INVISIBLE
+                advertisingButton.visibility = if (post is AdvertisingPost) View.VISIBLE else View.INVISIBLE
+                deleteButton.visibility = if (post is AdvertisingPost) View.VISIBLE else View.INVISIBLE
 
                 if (likes.count > 0) {
                     likesCount.text = likes.count.toString()
@@ -76,8 +68,6 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
                 if (reposts.count > 0) {
                     repostsCount.text = reposts.count.toString()
                 }
-
-                val defaultTextColor = likesCount.currentTextColor
 
                 if (likes.userLikes) {
                     likeButton.setImageResource(R.drawable.ic_favorite_active_24dp)
@@ -99,7 +89,7 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
                         likesCount.setTextColor(Color.RED)
                     } else {
                         likes.count--
-                        likesCount.setTextColor(defaultTextColor)
+                        likesCount.setTextColor(Color.rgb(80,80, 80))
                     }
 
                     if (likes.count > 0) {
@@ -146,9 +136,8 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
                 }
 
                 deleteButton.setOnClickListener {
-                    posts.drop(layoutPosition)
-                    notifyItemRemoved(layoutPosition)
-                    notifyDataSetChanged()
+                    posts.removeAt(adapterPosition)
+                    notifyItemRemoved(adapterPosition)
                 }
             }
         }
