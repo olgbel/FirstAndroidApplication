@@ -1,4 +1,4 @@
-package dto
+package com.example.firstandroidapplication.dto
 
 class AdvertisingPost(
     id: Long,

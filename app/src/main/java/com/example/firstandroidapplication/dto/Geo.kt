@@ -1,4 +1,4 @@
-package dto
+package com.example.firstandroidapplication.dto
 
 class Geo( val id: Int,
            val lat: Double,

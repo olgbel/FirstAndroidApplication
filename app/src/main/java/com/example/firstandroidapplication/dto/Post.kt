@@ -1,4 +1,4 @@
-package dto
+package com.example.firstandroidapplication.dto
 
 open class Post(val id: Long,
 //                val type: PostType,

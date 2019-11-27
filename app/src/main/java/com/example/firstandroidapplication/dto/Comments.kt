@@ -1,4 +1,4 @@
-package dto
+package com.example.firstandroidapplication.dto
 
 class Comments(val count: Int = 0,
                val canPost: Boolean = true,

@@ -1,4 +1,4 @@
-package dto
+package com.example.firstandroidapplication.dto
 
 fun howLongAgo(seconds: Int) : String{
 
@@ -13,7 +13,9 @@ fun howLongAgo(seconds: Int) : String{
     val hours: Double = minutes / 60
     return when {
         hours == 1.0 -> "час назад"
-        hours < 24 -> "${hours.toInt()} ${getSuffixForHours(hours)} назад"
+        hours < 24 -> "${hours.toInt()} ${getSuffixForHours(
+            hours
+        )} назад"
         hours == 24.0 -> "один день назад"
         hours < 24 * 30 -> "несколько дней назад"
         hours == 365.0 * 24 -> "год назад"

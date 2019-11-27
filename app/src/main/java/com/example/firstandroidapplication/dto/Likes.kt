@@ -1,4 +1,4 @@
-package dto
+package com.example.firstandroidapplication.dto
 
 class Likes(var count: Int = 0,
             var userLikes: Boolean = false,

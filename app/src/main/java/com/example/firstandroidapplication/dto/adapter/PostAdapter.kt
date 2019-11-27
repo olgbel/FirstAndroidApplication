@@ -1,4 +1,4 @@
-package dto.adapter
+package com.example.firstandroidapplication.dto.adapter
 
 import android.content.Intent
 import android.graphics.Color
@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstandroidapplication.R
 import android.net.Uri
-import dto.*
+import com.example.firstandroidapplication.dto.*
 
 class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
