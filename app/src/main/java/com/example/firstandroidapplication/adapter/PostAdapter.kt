@@ -1,4 +1,4 @@
-package com.example.firstandroidapplication.dto.adapter
+package com.example.firstandroidapplication.adapter
 
 import android.content.Intent
 import android.graphics.Color
@@ -54,19 +54,24 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
             content.text = post.content
 
             with(post) {
-                locationButton.visibility = if (post is EventPost) View.VISIBLE else View.INVISIBLE
-                playVideoButton.visibility = if (post is MediaPost) View.VISIBLE else View.INVISIBLE
-                advertisingButton.visibility = if (post is AdvertisingPost) View.VISIBLE else View.INVISIBLE
-                deleteButton.visibility = if (post is AdvertisingPost) View.VISIBLE else View.INVISIBLE
+                locationButton.visibility = if (type == PostType.EVENT) View.VISIBLE else View.INVISIBLE
+                playVideoButton.visibility = if (type == PostType.MEDIA) View.VISIBLE else View.INVISIBLE
+                advertisingButton.visibility = if (type == PostType.ADVERTISING) View.VISIBLE else View.INVISIBLE
+                deleteButton.visibility = if (type == PostType.ADVERTISING) View.VISIBLE else View.INVISIBLE
 
-                if (likes.count > 0) {
-                    likesCount.text = likes.count.toString()
+                likesCount.text = likes.count.toString()
+                commentsCount.text = comments.count.toString()
+                repostsCount.text = reposts.count.toString()
+
+                if (likes.count == 0){
+                    likesCount.text = ""
                 }
-                if (comments.count > 0) {
-                    commentsCount.text = comments.count.toString()
+
+                if (comments.count == 0){
+                    commentsCount.text = ""
                 }
-                if (reposts.count > 0) {
-                    repostsCount.text = reposts.count.toString()
+                if (reposts.count == 0) {
+                    repostsCount.text = ""
                 }
 
                 if (likes.userLikes) {
@@ -115,7 +120,7 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
                 }
 
                 playVideoButton.setOnClickListener {
-                    val address = Uri.parse((post as MediaPost).url)
+                    val address = Uri.parse(mediaURL)
                     val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
 
                     startActivity(itemView.context, openLinkIntent, null)
@@ -124,13 +129,13 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
                 locationButton.setOnClickListener {
                     val intent = Intent(Intent.ACTION_VIEW).apply {
                         data =
-                            Uri.parse("geo:${(post as EventPost).geo.lat},${(post as EventPost).geo.long}")
+                            Uri.parse("geo:${geo?.lat},${geo?.long}")
                     }
                     startActivity(itemView.context, intent, null)
                 }
 
                 advertisingButton.setOnClickListener {
-                    val webpage: Uri = Uri.parse((post as AdvertisingPost).url)
+                    val webpage: Uri = Uri.parse(advertisingURL)
                     val intent = Intent(Intent.ACTION_VIEW, webpage)
                     startActivity(itemView.context, intent, null)
                 }
