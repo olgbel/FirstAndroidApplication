@@ -54,10 +54,55 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
             content.text = post.content
 
             with(post) {
-                locationButton.visibility = if (type == PostType.EVENT) View.VISIBLE else View.INVISIBLE
-                playVideoButton.visibility = if (type == PostType.MEDIA) View.VISIBLE else View.INVISIBLE
-                advertisingButton.visibility = if (type == PostType.ADVERTISING) View.VISIBLE else View.INVISIBLE
-                deleteButton.visibility = if (type == PostType.ADVERTISING) View.VISIBLE else View.INVISIBLE
+
+                if (geo != null){
+                    locationButton.visibility = View.VISIBLE
+
+                    locationButton.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW).apply {
+                            data =
+                                Uri.parse("geo:${geo.lat},${geo.long}")
+                        }
+                        startActivity(itemView.context, intent, null)
+                    }
+                }
+                else {
+                    locationButton.visibility = View.INVISIBLE
+                }
+
+                if (mediaURL != null){
+                    playVideoButton.visibility = View.VISIBLE
+
+                    playVideoButton.setOnClickListener {
+                        val address = Uri.parse(mediaURL)
+                        val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
+
+                        startActivity(itemView.context, openLinkIntent, null)
+                    }
+                }
+                else {
+                    playVideoButton.visibility = View.INVISIBLE
+                }
+
+                if (advertisingURL != null){
+                    advertisingButton.visibility = View.VISIBLE
+                    deleteButton.visibility = View.VISIBLE
+
+                    advertisingButton.setOnClickListener {
+                        val webpage: Uri = Uri.parse(advertisingURL)
+                        val intent = Intent(Intent.ACTION_VIEW, webpage)
+                        startActivity(itemView.context, intent, null)
+                    }
+
+                    deleteButton.setOnClickListener {
+                        posts.removeAt(adapterPosition)
+                        notifyItemRemoved(adapterPosition)
+                    }
+                }
+                else {
+                    advertisingButton.visibility = View.INVISIBLE
+                    deleteButton.visibility = View.INVISIBLE
+                }
 
                 likesCount.text = likes.count.toString()
                 commentsCount.text = comments.count.toString()
@@ -117,32 +162,6 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
                         type = "text/plain"
                     }
                     startActivity(itemView.context, intent, null)
-                }
-
-                playVideoButton.setOnClickListener {
-                    val address = Uri.parse(mediaURL)
-                    val openLinkIntent = Intent(Intent.ACTION_VIEW, address)
-
-                    startActivity(itemView.context, openLinkIntent, null)
-                }
-
-                locationButton.setOnClickListener {
-                    val intent = Intent(Intent.ACTION_VIEW).apply {
-                        data =
-                            Uri.parse("geo:${geo?.lat},${geo?.long}")
-                    }
-                    startActivity(itemView.context, intent, null)
-                }
-
-                advertisingButton.setOnClickListener {
-                    val webpage: Uri = Uri.parse(advertisingURL)
-                    val intent = Intent(Intent.ACTION_VIEW, webpage)
-                    startActivity(itemView.context, intent, null)
-                }
-
-                deleteButton.setOnClickListener {
-                    posts.removeAt(adapterPosition)
-                    notifyItemRemoved(adapterPosition)
                 }
             }
         }

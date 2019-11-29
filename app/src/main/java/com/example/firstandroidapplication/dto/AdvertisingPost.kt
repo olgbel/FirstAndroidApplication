@@ -9,4 +9,4 @@ class AdvertisingPost(
     comments: Comments,
     likes: Likes,
     reposts: Reposts/*,
-    val url: String*/): Post(id, type, author, content, created, comments, likes, reposts)
+    val url: String*/): Post(id, type, author, content, created, comments, likes, reposts, null)

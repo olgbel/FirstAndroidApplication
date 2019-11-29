@@ -10,4 +10,4 @@ class EventPost(
     likes: Likes,
     reposts: Reposts/*,
     val geo: Geo */
-) : Post(id, type, author, content, created, comments, likes, reposts)
+) : Post(id, type, author, content, created, comments, likes, reposts, null)

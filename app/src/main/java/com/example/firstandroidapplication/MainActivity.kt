@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
                 1566818240,
                 Comments(1),
                 Likes(1, true),
-                Reposts(5)
+                Reposts(5),
+                null
             ),
             Post(
                 3,
@@ -69,7 +70,8 @@ class MainActivity : AppCompatActivity() {
                 786756,
                 Comments(5),
                 Likes(5, true),
-                Reposts(0)
+                Reposts(0),
+                null
             ),
             Post(
                 1,
@@ -79,7 +81,8 @@ class MainActivity : AppCompatActivity() {
                 9955334,
                 Comments(9),
                 Likes(0, false),
-                Reposts(2)
+                Reposts(2),
+                null
             ),
             Post(
                 7,
