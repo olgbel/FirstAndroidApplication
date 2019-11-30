@@ -70,6 +70,10 @@ fun main() {
         )
     )
 
+    val advertisingPosts: List<Post> = listOf(
+        Post(90, PostType.ADVERTISING, "Netology", "Black blin Friday everywhere", 454, Comments(1), Likes(3, true), Reposts(), null, null, "http://labirint.ru"),
+        Post(37, PostType.ADVERTISING, "Netology", "Black blin Friday everywhere", 454, Comments(), Likes(2), Reposts(), null, null, "http://vk.com")
+    )
     println(Gson().toJson(list))
 
     val gson = GsonBuilder().apply {
@@ -78,4 +82,5 @@ fun main() {
     }.create()
 
     Files.write(Paths.get("./posts.json"), gson.toJson(list).toByteArray(), StandardOpenOption.CREATE)
+    Files.write(Paths.get("./advertising.json"), gson.toJson(advertisingPosts).toByteArray(), StandardOpenOption.CREATE)
 }
