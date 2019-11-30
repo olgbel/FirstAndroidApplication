@@ -83,32 +83,6 @@
     "advertisingURL": null
   },
   {
-    "id": 9,
-    "type": "ADVERTISING",
-    "author": "Netology",
-    "content": "Test advertising delete",
-    "created": 9090,
-    "comments": {
-      "count": 9,
-      "canPost": true,
-      "groupsCanPost": true,
-      "canClose": true,
-      "canOpen": true
-    },
-    "likes": {
-      "count": 0,
-      "userLikes": false,
-      "canPublish": true
-    },
-    "reposts": {
-      "count": 2,
-      "userReposted": true
-    },
-    "geo": null,
-    "mediaURL": null,
-    "advertisingURL": "https://google.com/"
-  },
-  {
     "id": 6,
     "type": "POST",
     "author": "Netology",
@@ -133,6 +107,34 @@
     "geo": null,
     "mediaURL": null,
     "advertisingURL": null
+  },
+  {
+    "id": 1,
+    "type": "POST",
+    "author": "Netology",
+    "content": "First it in our network!",
+    "created": 9955334,
+    "comments": {
+      "count": 9,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 0,
+      "userLikes": false,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 2,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": null
+  }
+]singURL": null
   },
   {
     "id": 1,
