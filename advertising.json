@@ -1,0 +1,54 @@
+[
+  {
+    "id": 90,
+    "type": "ADVERTISING",
+    "author": "Netology",
+    "content": "Black blin Friday everywhere",
+    "created": 454,
+    "comments": {
+      "count": 1,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 3,
+      "userLikes": true,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 0,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": "http://labirint.ru"
+  },
+  {
+    "id": 37,
+    "type": "ADVERTISING",
+    "author": "Netology",
+    "content": "Black blin Friday everywhere",
+    "created": 454,
+    "comments": {
+      "count": 0,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 2,
+      "userLikes": false,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 0,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": "http://vk.com"
+  }
+]
