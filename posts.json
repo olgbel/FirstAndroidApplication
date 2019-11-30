@@ -1,0 +1,189 @@
+[
+  {
+    "id": 4,
+    "type": "POST",
+    "author": "Netology",
+    "content": "Kotlin MeetUp!",
+    "created": 1566818240,
+    "comments": {
+      "count": 1,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 1,
+      "userLikes": true,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 5,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": null
+  },
+  {
+    "id": 3,
+    "type": "EVENT",
+    "author": "Netology",
+    "content": "See where you are!",
+    "created": 1566418240,
+    "comments": {
+      "count": 5,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 5,
+      "userLikes": true,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 0,
+      "userReposted": true
+    },
+    "geo": {
+      "id": 1,
+      "lat": -90.9,
+      "long": 90.0,
+      "address": "SPb VO 7 64"
+    },
+    "mediaURL": null,
+    "advertisingURL": null
+  },
+  {
+    "id": 2,
+    "type": "MEDIA",
+    "author": "Netology",
+    "content": "Watch our video!",
+    "created": 1566518240,
+    "comments": {
+      "count": 0,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 3,
+      "userLikes": false,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 1,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": "https://www.youtube.com/watch?v\u003dWhWc3b3KhnY",
+    "advertisingURL": null
+  },
+  {
+    "id": 9,
+    "type": "ADVERTISING",
+    "author": "Netology",
+    "content": "Test advertising delete",
+    "created": 9090,
+    "comments": {
+      "count": 9,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 0,
+      "userLikes": false,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 2,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": "https://google.com/"
+  },
+  {
+    "id": 6,
+    "type": "POST",
+    "author": "Netology",
+    "content": "Our network is growing!",
+    "created": 786756,
+    "comments": {
+      "count": 5,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 5,
+      "userLikes": true,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 0,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": null
+  },
+  {
+    "id": 1,
+    "type": "POST",
+    "author": "Netology",
+    "content": "First it in our network!",
+    "created": 9955334,
+    "comments": {
+      "count": 9,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 0,
+      "userLikes": false,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 2,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": null
+  },
+  {
+    "id": 7,
+    "type": "ADVERTISING",
+    "author": "Netology",
+    "content": "Go through the link: ",
+    "created": 9090,
+    "comments": {
+      "count": 9,
+      "canPost": true,
+      "groupsCanPost": true,
+      "canClose": true,
+      "canOpen": true
+    },
+    "likes": {
+      "count": 0,
+      "userLikes": false,
+      "canPublish": true
+    },
+    "reposts": {
+      "count": 2,
+      "userReposted": true
+    },
+    "geo": null,
+    "mediaURL": null,
+    "advertisingURL": "https://netology.ru/"
+  }
+]
