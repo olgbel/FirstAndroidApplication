@@ -29,9 +29,14 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         val posts = withContext(Dispatchers.IO) {
             Api.client.get<MutableList<Post>>(Api.url)
         }
+
+        val advertisingPosts = withContext(Dispatchers.IO){
+            Api.client.get<MutableList<Post>>(Api.advertisingURL)
+        }
+
         with(recyclerView){
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = PostAdapter(posts)
+            adapter = PostAdapter(posts, advertisingPosts)
         }
         progressBar.visibility = View.GONE
     }

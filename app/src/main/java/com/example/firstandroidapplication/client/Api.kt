@@ -7,6 +7,7 @@ import io.ktor.http.ContentType
 
 object Api {
     const val url = "https://raw.githubusercontent.com/olgbel/firstAndroidApplication/master/posts.json"
+    const val advertisingURL = "https://raw.githubusercontent.com/olgbel/firstAndroidApplication/master/advertising.json"
 
     val client = HttpClient {
         install(JsonFeature) {

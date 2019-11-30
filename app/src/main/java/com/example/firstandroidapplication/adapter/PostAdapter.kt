@@ -14,7 +14,7 @@ import com.example.firstandroidapplication.R
 import android.net.Uri
 import com.example.firstandroidapplication.dto.*
 
-class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class PostAdapter(val posts: MutableList<Post>, private val advertisingPosts: MutableList<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     override fun getItemCount() = posts.size
 
@@ -25,7 +25,16 @@ class PostAdapter(val posts: MutableList<Post>) : RecyclerView.Adapter<PostAdapt
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-        holder.bind(posts[position])
+        val mixedPosts = mutableListOf<Post>()
+        posts.forEach {
+            if (posts.indexOf(it) > 0 && posts.indexOf(it) % 3 == 0 && advertisingPosts.size > 0){
+                mixedPosts.add(advertisingPosts[0])
+            }
+            else {
+                mixedPosts.add(it)
+            }
+        }
+        holder.bind(mixedPosts[position])
     }
 
     inner class PostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
