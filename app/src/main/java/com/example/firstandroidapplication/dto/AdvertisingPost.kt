@@ -9,4 +9,9 @@ class AdvertisingPost(
     comments: Comments,
     likes: Likes,
     reposts: Reposts/*,
-    val url: String*/): Post(id, type, author, content, created, comments, likes, reposts, null)
+    val url: String*/): Post(id, type, author, content, created, comments, likes, reposts, null) {
+
+    override fun bind(post: Post) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+}

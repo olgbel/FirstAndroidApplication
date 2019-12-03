@@ -10,8 +10,10 @@ import com.example.firstandroidapplication.adapter.PostAdapter
 import com.example.firstandroidapplication.client.Api
 import com.example.firstandroidapplication.dto.Post
 import io.ktor.client.request.get
+import io.ktor.util.KtorExperimentalAPI
 import kotlinx.coroutines.*
 
+@KtorExperimentalAPI
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
